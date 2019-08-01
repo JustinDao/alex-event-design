@@ -2,14 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import NavBar from './NavBar';
 
-import "./App.css"
+// import "./About.css"
 
-class App extends React.Component {
+class About extends React.Component {
   render() {
     return (
-      <NavBar />
+      <h6>About</h6>
     );
   }
 }
 
-export default App;
+export default About;

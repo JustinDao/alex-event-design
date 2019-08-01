@@ -1,86 +1,29 @@
 import "./NavBar.css"
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import Button from 'react-bootstrap/Button';
 
-// Theme
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import teal from '@material-ui/core/colors/teal';
-const theme = createMuiTheme({
-  palette: {
-    secondary: {
-        main: teal[500]
-      }
-    }
-  },
-)
-
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-  },
-});
-
-export default function NavBar() {
-  const [spacing] = React.useState(5);
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <MuiThemeProvider theme={theme}>
-        <AppBar position="static" color="secondary">
-          <Toolbar>
-            <Grid container>
-              <Grid item xs={4}>
-
-                <Grid container justify="flex-start" spacing={spacing}>
-                  <Grid item>
-                    <Typography variant="h6" color="inherit">
-                      About
-                    </Typography>
-                  </Grid>
-
-                  <Grid item>
-                    <Typography variant="h6" color="inherit">
-                      Services
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Grid>
-
-              <Grid item xs={4}>
-                <Grid container justify="center" spacing={spacing}>
-                  <Grid item>
-                    <Typography variant="h6" color="inherit">
-                      Alex and Alfie
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Grid>
-              
-              <Grid item xs={4}>
-                <Grid container justify="flex-end" spacing={spacing}>
-                  <Grid item>
-                    <Typography variant="h6" color="inherit">
-                      Gallery
-                    </Typography>
-                  </Grid>
-
-                  <Grid item>
-                    <Typography variant="h6" color="inherit">
-                      Contact
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Toolbar>
-        </AppBar>
-       </MuiThemeProvider>
-    </div>
-  );
+class NavBar extends React.Component {
+  render() {
+    return (
+      <Navbar bg="light" expand="lg">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/services">Services</Nav.Link>
+            <Nav.Link href="/gallery">Gallery</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
+          </Nav>
+          <Navbar.Brand href="#home">Alex and Alfie</Navbar.Brand>
+        </Navbar.Collapse>
+      </Navbar>
+    );
+  }
 }
 
+export default NavBar;
