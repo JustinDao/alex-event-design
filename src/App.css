@@ -1,3 +1,10 @@
+body {
+  background-image: url("/sbkphoto_209_bw.jpg");
+  background-size: cover;
+
+  /*background-image: url("/grey_jean_pattern.jpg");*/
+}
+
 .App {
   text-align: center;
 }
