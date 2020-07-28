@@ -1,9 +1,20 @@
 import React from "react";
-import "./App.css";
-import NavBar from "./Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-function App() {
-  return <NavBar />;
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+
+export default function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
-
-export default App;
